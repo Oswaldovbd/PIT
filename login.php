@@ -17,31 +17,32 @@ session_start();
         <form action="" method="POST">
             <h2>Login</h2>
             <label for="user">Nome de Usuário:</label><br>
-            <input type="text" name="username_login"><br>
+            <input type="text" name="username"><br>
             <label for="pass">Senha:</label><br>
-            <input type="password" name="pass_login"><br>
+            <input type="password" name="password"><br>
             <button type="submit">Entrar</button>
         </form>
     </div>
     <?php
-    if (isset($_POST['username_login']) && isset($_POST['pass_login'])) {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
 
-        $username_login = $_POST['username_login'];
-        $pass_login = $_POST['pass_login'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-        if (empty($username_login)) {
+        if (empty($username)) {
             echo "Digite o Nome de Usuário";
-        } elseif (empty($pass_login)) {
+        } elseif (empty($password)) {
             echo "Digite a Senha";
         } else {
-            $sql = "SELECT nome, senha FROM usuario WHERE nome = '$username_login' AND senha = '$pass_login'";
+            $sql = "SELECT usuario_id, nome, senha FROM usuario WHERE nome = '$username' AND senha = '$password'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) === 1) {
                 $row = mysqli_fetch_assoc($result);
 
-                if ($row['nome'] === $username_login && $row['senha'] == $pass_login) {
-                    echo "Logado com sucesso!";
+                if ($row['nome'] === $username && $row['senha'] == $password) {
+                    $_SESSION['usuario_id'] = $row['usuario_id'];
+                    header('Location: home.php');
                 }
             } else {
                 echo "Usuário ou senha incorretos!";
