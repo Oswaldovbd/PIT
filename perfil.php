@@ -5,6 +5,18 @@ include 'conexao.php';
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
 }
+
+$query = "SELECT * FROM usuario WHERE usuario_id = ?";
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param('i', $_SESSION['usuario_id']);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if (!$result) {
+    header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +30,7 @@ if (!isset($_SESSION['usuario_id'])) {
 </head>
 
 <body>
-    <a href="editar.php">Editar Perfil</a>
-    <a href="deletar.php">Deletar Perfil</a>
+    <h1>Perfil:</h1>
 </body>
 
 </html>
