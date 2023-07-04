@@ -19,7 +19,7 @@ session_start();
             <label for="user">Nome de Usuário:</label><br>
             <input type="text" name="username"><br>
             <label for="pass">Senha:</label><br>
-            <input type="password" name="password"><br>
+            <input type="text" name="password"><br>
             <button type="submit">Entrar</button>
         </form>
     </div>

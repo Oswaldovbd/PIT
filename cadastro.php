@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 <body>
 
     <div class="box">
-        <form action="#" method="POST">
+        <form action="home.php" method="POST">
             <fieldset>
                 <legend><b>Fórmulário de Usuários</b></legend>
                 <br>
