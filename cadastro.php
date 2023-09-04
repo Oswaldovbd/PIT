@@ -30,91 +30,138 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
-
+    <title>Home Alone</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="iconecasa.png">
 </head>
 
 <body>
-
-    <div class="box">
-        <form action="home.php" method="POST">
-            <fieldset>
-                <legend><b>Fórmulário de Usuários</b></legend>
-                <br>
-                <div class="inputBox">
-                    <label for="nome" class="labelInput">Nome completo:</label>
-                    <input type="text" name="nome" id="nome" class="inputUser" required autocomplete="off">
-
+    <div class="nav">
+        <a href="./html/landingpage.html"> <img src="./img/logo.png" alt="" id="logo"> </a>
+        <ul id="lista1">
+            <il class="textonav"> Sobre </il>
+            <il class="textonav"> All Alone </il>
+            <il class="textonav"> Visitante </il>
+            <il>
+                <div>
+                    <input type="checkbox" class="checkbox" id="chk" />
+                    <label class="label" for="chk">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <div class="ball"> </div>
+                    </label>
                 </div>
-                <br>
-                <div class="inputBox">
-                    <label for="senha" class="labelInput">Senha:</label>
-                    <input type="text" name="senha" id="senha" class="inputUser" required autocomplete="off">
+            </il>
+            <il class="textonav"> Cadastro </il>
+            <il class="textonav"> Login </il>
+        </ul>
+    </div>
 
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="email" class="labelInput">Email:</label>
-                    <input type="text" name="email" id="email" class="inputUser" required autocomplete="off">
+    <div class="box2">
 
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="cpf" class="labelInput">CPF:</label>
-                    <input type="text" maxlength="14" name="cpf" id="cpf" class="inputUser" required autocomplete="off"
-                        oninput=mascara_cpf()>
+        <form action="#" method="POST" class="form">
+            <h1 class="titulo2"> Cadastro </h1>
 
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="telefone" class="labelInput">Telefone</label>
-                    <input type="tel" maxlength="15" name="telefone" id="telefone" class="inputUser" required
-                        autocomplete="off" oninput=mascara_telefone()>
+            <div class="inputBox">
+                <label for="nome" class="labelInput">Nome completo:</label> <br>
+                <input type="text" name="nome" id="nome" class="inputUser" required>
 
-                </div>
-                <p>Sexo:</p>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="senha" class="labelInput">Senha:</label> <br>
+                <input type="text" name="senha" id="senha" class="inputUser" required>
+
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="email" class="labelInput">Email:</label> <br>
+                <input type="text" name="email" id="email" class="inputUser" required>
+
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="cpf" class="labelInput">CPF:</label> <br>
+                <input type="text" maxlength="14" name="cpf" id="cpf" class="inputUser" required oninput=mascara_cpf()>
+
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="telefone" class="labelInput">Telefone:</label> <br>
+                <input type="tel" maxlength="15" name="telefone" id="telefone" class="inputUser" required
+                    oninput=mascara_telefone()>
+
+            </div>
+
+            <div class="inputbox">
+                <p class="labelInput">Sexo:</p>
                 <input type="radio" id="feminino" name="genero" value="feminino" required autocomplete="off">
-                <label for="feminino">Feminino</label>
+                <label for="feminino" class="labelInput">Feminino</label>
                 <br>
                 <input type="radio" id="masculino" name="genero" value="masculino" required autocomplete="off">
-                <label for="masculino">Masculino</label>
+                <label for="masculino" class="labelInput">Masculino</label>
                 <br>
                 <input type="radio" id="outro" name="genero" value="outro" required autocomplete="off">
-                <label for="outro">Outro</label>
+                <label for="outro" class="labelInput">Outro</label>
                 <br><br>
-                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
-                <input type="date" name="data_nascimento" id="data_nascimento" required autocomplete="off">
-                <br><br><br>
-                <div class="inputBox">
-                    <label for="cidade" class="labelInput">Cidade:</label>
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required autocomplete="off">
-                </div>
+            </div>
+
+            <div class="datanasc"> <label for="data_nascimento"><b class="labelInput">Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br>
-                <div class="inputBox">
-                    <label for="estado" class="labelInput">Estado:</label>
-                    <input type="text" name="estado" id="estado" class="inputUser" required autocomplete="off">
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="estado" class="labelInput">Rua:</label>
-                    <input type="text" name="rua" id="rua" class="inputUser" required autocomplete="off">
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="bairro" class="labelInput">Bairro:</label>
-                    <input type="text" name="bairro" id="bairro" class="inputUser" required autocomplete="off">
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="complemento" class="labelInput">Complemento:</label>
-                    <input type="text" name="complemento" id="complemento" class="inputUser" required
-                        autocomplete="off">
-                </div>
-                <br><br>
-                <button type="submit" name="submit" id="submit">Enviar</button>
-            </fieldset>
+            </div>
+
+            <div class="inputBox">
+                <label for="cidade" class="labelInput" id="end">Cidade:</label> <br>
+                <input type="text" name="cidade" id="cidade" class="inputUser" required>
+
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="estado" class="labelInput" id="end">Estado:</label> <br>
+                <input type="text" name="estado" id="estado" class="inputUser" required>
+
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="estado" class="labelInput">Rua:</label> <br>
+                <input type="text" name="rua" id="rua" class="inputUser" required autocomplete="off">
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="bairro" class="labelInput">Bairro:</label> <br>
+                <input type="text" name="bairro" id="bairro" class="inputUser" required autocomplete="off">
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="complemento" class="labelInput">Complemento:</label> <br>
+                <input type="text" name="complemento" id="complemento" class="inputUser" required autocomplete="off">
+            </div>
+            <br> <br>
+            <input type="submit" name="submit" id="submit" value="ENVIAR">
+
         </form>
+        <a href="login.php">
+            <div class="icone2"> <img src="./img/profileicon.png" alt="" width="300px" id="iconeperfil"> <br> <a
+                    class="titulo2" href="login.php"> Já é cadastrado? </a> <a class="texto3"
+                    href="./html/landingpage.html">
+                    Clique aqui para entrar </a> </div>
+        </a>
     </div>
+    <div class="rodape">
+        <img src="./img/logo.png" alt="" id="logo">
+        <div class="footertxt">
+            <ul class="listafooter">
+                <il class="txtfooter"> Home </il>
+                <il class="txtfooter"> Sobre nós </il>
+                <il class="txtfooter"> Contato </il>
+                <il class="txtfooter"><br><br><br> </il>
+                <il class="txtfooter"> ©Todos Direitos Reservados HomeAlone </il>
+            </ul>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
     <script src="script.js"> </script>
 </body>
 
