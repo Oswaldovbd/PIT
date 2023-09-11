@@ -1,5 +1,7 @@
 <?php
-include_once('conexao.php');
+session_start();
+include_once 'conexao.php';
+include 'verifica_conexao.php';
 
 if (isset($_POST['deletar'])) {
     $end_id = $_POST['endereco_id'];
@@ -15,10 +17,8 @@ if (isset($_POST['deletar'])) {
     $stmtDelete2->bind_param('i', $end_id);
     $stmtDelete2->execute();
 
-    // Verifica se algum registro foi afetado pela exclusão
+
     if ($stmtDelete->affected_rows > 0 || $stmtDelete2->affected_rows > 0) {
-        // Exclusão bem-sucedida
-        // Faça qualquer outra ação necessária aqui
 
         $stmtDelete->close();
         $stmtDelete2->close();
@@ -27,13 +27,9 @@ if (isset($_POST['deletar'])) {
         header('Location: ./html/landingpage.html');
         exit();
     } else {
-        // Nenhum registro foi afetado pela exclusão
-        // Faça qualquer tratamento de erro necessário aqui
         echo "Erro ao excluir o usuário.";
     }
 } else {
-    // O botão "Deletar" não foi acionado
-    // Faça qualquer tratamento necessário aqui
     echo "Nenhuma solicitação de exclusão recebida.";
 }
 ?>

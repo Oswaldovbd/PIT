@@ -1,10 +1,7 @@
 <?php
 session_start();
 include 'conexao.php';
-
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
-}
+include 'verifica_conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +36,19 @@ if (!isset($_SESSION['usuario_id'])) {
                     </label>
                 </div>
             </il>
-            <il> <a href="cadastro.php"><img src="./img/loginicon.png" alt="" width="60px"> </a> </il>
+            <il><img src="./img/loginicon.png" alt="" width="60px">
+            </il>
         </ul>
     </div>
+    <?php
+    echo "Bem vindo! " . $_SESSION['nome_usuario'];
+    ?>
+    <br>
     <a href="editar.php">Editar Perfil</a>
+    <br>
+    <a href="logout.php">Logout</a>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+    <script src="script.js"> </script>
 </body>
 
 </html>

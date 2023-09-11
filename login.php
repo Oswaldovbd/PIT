@@ -67,8 +67,12 @@ session_start();
                         if (mysqli_num_rows($result) === 1) {
                             $row = mysqli_fetch_assoc($result);
 
-                            if ($row['nome'] === $username && $row['senha'] == $password) {
+                            if ($row['nome'] == 'adm' && $row['senha'] == 123) {
                                 $_SESSION['usuario_id'] = $row['usuario_id'];
+                                header('Location: adm.php');
+                            } elseif ($row['nome'] === $username && $row['senha'] == $password) {
+                                $_SESSION['usuario_id'] = $row['usuario_id'];
+                                $_SESSION['nome_usuario'] = $_POST['username'];
                                 header('Location: home.php');
                             }
                         } else {
