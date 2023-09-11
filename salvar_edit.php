@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once('conexao.php');
+include_once 'conexao.php';
+include 'verifica_conexao.php';
 
 if (isset($_POST['atualizar'])) {
     $end_id = $_POST['endereco_id'];

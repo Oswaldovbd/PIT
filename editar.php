@@ -1,10 +1,7 @@
 <?php
 session_start();
 include 'conexao.php';
-
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
-}
+include 'verifica_conexao.php';
 
 $query = "SELECT * FROM usuario, endereco WHERE usuario_id = ?";
 
