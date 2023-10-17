@@ -24,7 +24,7 @@ if (isset($_POST['deletar'])) {
         $stmtDelete2->close();
         $conn->close();
 
-        header('Location: ./html/landingpage.html');
+        header('Location: ../Pages/landingpage.php');
         exit();
     } else {
         echo "Erro ao excluir o usuário.";

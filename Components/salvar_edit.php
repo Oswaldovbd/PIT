@@ -25,6 +25,6 @@ if (isset($_POST['atualizar'])) {
     $result = $conn->query($sqlInsert);
     print_r($result);
 }
-header('Location: home.php');
+header('Location: ../Pages/home.php');
 
 ?>
