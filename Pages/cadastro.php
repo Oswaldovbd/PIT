@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
         <br>
         <div class="inputBox">
             <label for="senha" class="labelInput">Senha:</label> <br>
-            <input type="text" name="senha" id="senha" class="inputUser" required>
+            <input type="password" name="senha" id="senha" class="inputUser" required>
         </div>
         <br>
         <div class="inputBox">
