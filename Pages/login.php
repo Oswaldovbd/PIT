@@ -16,7 +16,7 @@ session_start();
             </div>
             <div class="inputBox">
                 <label for="pass" class="labelInput">Senha:</label><br>
-                <input type="text" name="password" class="inputUser"><br>
+                <input type="password" name="password" class="inputUser"><br>
                 <br>
                 <?php
                 if (isset($_POST['username']) && isset($_POST['password'])) {
