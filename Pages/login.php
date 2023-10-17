@@ -1,44 +1,12 @@
 <?php
-include "conexao.php";
+include "../Components/conexao.php";
+include 'header.php';
 session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Alone</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="iconecasa.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-
 <body id="login">
-    <div class="nav">
-        <a href="./html/landingpage.html"> <img src="./img/logo.png" alt="" id="logo"> </a>
-        <ul id="lista1">
-            <il class="textonav"> Sobre </il>
-            <il class="textonav"> All Alone </il>
-            <il class="textonav"> Visitante </il>
-            <il>
-                <div>
-                    <input type="checkbox" class="checkbox" id="chk" />
-                    <label class="label" for="chk">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                        <div class="ball"> </div>
-                    </label>
-                </div>
-            </il>
-            <il class="textonav"> <a href="cadastro.php">Cadastro</a> </il>
-            <il class="textonav"> Login </il>
-        </ul>
-    </div>
-
     <div class="box3">
         <form action="" method="POST" class="formlogin">
             <h1 class="titulo2"> Login </h1>
@@ -86,21 +54,11 @@ session_start();
 
         </form>
     </div>
-    <div class="rodape">
-        <img src="./img/logo.png" alt="" id="logo">
-        <div class="footertxt">
-            <ul class="listafooter">
-                <il class="txtfooter"> Home </il>
-                <il class="txtfooter"> Sobre nós </il>
-                <il class="txtfooter"> Contato </il>
-                <il class="txtfooter"><br><br><br> </il>
-                <il class="txtfooter"> ©Todos Direitos Reservados HomeAlone </il>
-            </ul>
-        </div>
-    </div>
-
+    <?php
+    include 'footer.php';
+    ?>
     <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
-    <script src="script.js"> </script>
+    <script src="../Components/script.js"> </script>
 </body>
 
 </html>
