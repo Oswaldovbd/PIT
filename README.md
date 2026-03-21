@@ -22,6 +22,7 @@ Mudar-se para a primeira casa sozinho é um desafio que mistura liberdade com to
 ### 💻 Tecnologias
 * HTML5 / CSS3
 * PHP
+* JavaScript
 * Git & GitHub
 
 ---
